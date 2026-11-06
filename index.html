@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jose Herrera Figueroa | Ingeniero Electrónico & QA Analyst</title>
+  
+  <!-- Tipografías de alta calidad -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Estilos modulares organizados -->
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+  <!-- Canvas de partículas interactivo -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Efecto linterna suave que sigue al cursor -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- NAVEGACIÓN LATERAL IZQUIERDA (SELECT DIRECTO) -->
+  <nav class="side-nav" id="sideNav">
+    <a href="#hero" class="nav-logo" title="Inicio">JH</a>
+    <ul class="nav-links">
+      <li>
+        <a href="#hero" class="nav-link active" data-section="hero">
+          <i class="fas fa-home"></i>
+          <span class="nav-tooltip">Inicio</span>
+        </a>
+      </li>
+      <li>
+        <a href="#about" class="nav-link" data-section="about">
+          <i class="fas fa-user"></i>
+          <span class="nav-tooltip">Sobre Mí</span>
+        </a>
+      </li>
+      <li>
+        <a href="#experience" class="nav-link" data-section="experience">
+          <i class="fas fa-briefcase"></i>
+          <span class="nav-tooltip">Experiencia</span>
+        </a>
+      </li>
+      <li>
+        <a href="#education" class="nav-link" data-section="education">
+          <i class="fas fa-graduation-cap"></i>
+          <span class="nav-tooltip">Educación</span>
+        </a>
+      </li>
+      <li>
+        <a href="#skills" class="nav-link" data-section="skills">
+          <i class="fas fa-code"></i>
+          <span class="nav-tooltip">Habilidades</span>
+        </a>
+      </li>
+      <li>
+        <a href="#certifications" class="nav-link" data-section="certifications">
+          <i class="fas fa-certificate"></i>
+          <span class="nav-tooltip">Certificados</span>
+        </a>
+      </li>
+      <li>
+        <a href="#languages" class="nav-link" data-section="languages">
+          <i class="fas fa-language"></i>
+          <span class="nav-tooltip">Idiomas</span>
+        </a>
+      </li>
+      <li>
+        <a href="#contact" class="nav-link" data-section="contact">
+          <i class="fas fa-paper-plane"></i>
+          <span class="nav-tooltip">Contacto</span>
+        </a>
+      </li>
+    </ul>
+    <div class="nav-footer-indicator">2026</div>
+  </nav>
+
+  <!-- Botón móvil para abrir navegación -->
+  <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Abrir Menú">
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+  </button>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="main-content">
+
+    <!-- 00. HERO -->
+    <section id="hero" class="section hero-section">
+      <div class="section-container">
+        <p class="hero-subtitle reveal-up">Hola, bienvenido a mi perfil profesional</p>
+        <h1 class="hero-name reveal-up delay-1">
+          Jose Herrera<br>
+          <span class="silver-gradient">Figueroa</span>
+        </h1>
+        <div class="hero-typewriter-box reveal-up delay-2">
+          <span class="prefix">&gt;</span>
+          <span id="typewriter"></span>
+          <span class="cursor">|</span>
+        </div>
+        <p class="hero-desc reveal-up delay-3">
+          Ingeniero Electrónico orientado a la excelencia y resolución de problemas. 
+          Actualmente desempeñándome como <strong>QA Analyst</strong> en <strong>Naowee Suite S.A.S</strong>, 
+          con sólida experiencia en telecomunicaciones, redes e ingeniería.
+        </p>
+        <div class="hero-actions reveal-up delay-4">
+          <a href="#experience" class="btn btn-white">
+            <i class="fas fa-layer-group"></i> Ver Experiencia
+          </a>
+          <a href="assets/docs/CV_Jose_Herrera_Figueroa.pdf" download="CV_Jose_Herrera_Figueroa.pdf" class="btn btn-download">
+            <i class="fas fa-file-pdf"></i> Descargar CV
+          </a>
+          <a href="#contact" class="btn btn-ghost">
+            <i class="fas fa-envelope"></i> Contactar
+          </a>
+        </div>
+        <div class="hero-stats reveal-up delay-5">
+          <div class="stat-box">
+            <span class="stat-number">4</span><span class="stat-plus">+</span>
+            <span class="stat-desc">Años de Trayectoria</span>
+          </div>
+          <div class="stat-separator"></div>
+          <div class="stat-box">
+            <span class="stat-number">5</span>
+            <span class="stat-desc">Experiencias Clave</span>
+          </div>
+          <div class="stat-separator"></div>
+          <div class="stat-box">
+            <span class="stat-number">6</span><span class="stat-plus">+</span>
+            <span class="stat-desc">Certificaciones</span>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-mouse-indicator">
+        <div class="mouse-contour"><div class="mouse-dot"></div></div>
+        <span>Bajar</span>
+      </div>
+    </section>
+
+    <!-- 01. SOBRE MÍ -->
+    <section id="about" class="section">
+      <div class="section-container">
+        <h2 class="section-title reveal-up">
+          <span class="title-tag">01.</span> Sobre Mí
+        </h2>
+        <div class="about-grid">
+          <div class="about-text reveal-left">
+            <p>
+              Ingeniero Electrónico con sólida formación y experiencia integral en el área de <strong>Telecomunicaciones</strong>. 
+              Poseo destacadas habilidades en <strong>gestión del tiempo y organización</strong>, <strong>resolución estratégica de problemas</strong>, 
+              liderazgo y dominio de herramientas ofimáticas avanzadas.
+            </p>
+            <p>
+              Cuento con amplia capacidad en <strong>análisis de datos</strong>, control y medición en mantenimientos preventivos y correctivos 
+              de infraestructura en redes y fibra óptica, impulsando la mejora continua de procesos con un enfoque riguroso de atención al detalle.
+            </p>
+            <p>
+              Actualmente ejerzo como <strong>QA Analyst (Analista de Aseguramiento de Calidad)</strong> en <strong>Naowee Suite S.A.S</strong>, 
+              liderando pruebas de calidad de software, validación funcional y optimización de plataformas digitales.
+            </p>
+          </div>
+          <div class="profile-card hover-card reveal-right">
+            <div class="avatar-frame">
+              <img src="assets/img/perfil.jpg" alt="Jose Herrera Figueroa">
+            </div>
+            <h3 class="avatar-name">Jose Herrera Figueroa</h3>
+            <span class="avatar-role">Ingeniero Electrónico & QA</span>
+            <div class="quick-info-list">
+              <div class="quick-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Barranquilla Atl., Colombia</span>
+              </div>
+              <div class="quick-item">
+                <i class="fas fa-envelope"></i>
+                <span>inghfjose@gmail.com</span>
+              </div>
+              <div class="quick-item">
+                <i class="fas fa-phone-alt"></i>
+                <span>313 729 1081 / 311 707 7474</span>
+              </div>
+              <div class="quick-item">
+                <i class="fas fa-building"></i>
+                <span>Naowee Suite S.A.S</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02. EXPERIENCIA LABORAL -->
+    <section id="experience" class="section">
+      <div class="section-container">
+        <h2 class="section-title reveal-up">
+          <span class="title-tag">02.</span> Experiencia Laboral
+        </h2>
+        <div class="timeline">
+
+          <!-- 1. Naowee Suite - QA Analyst (Ascenso) -->
+          <div class="timeline-item reveal-up">
+            <div class="timeline-node active-now"></div>
+            <div class="timeline-card hover-card modal-trigger"
+                 data-modal-title="QA Analyst (Analista de Aseguramiento de Calidad)"
+                 data-modal-subtitle="Naowee Suite S.A.S · 01/08/2026 - Actualidad"
+                 data-modal-content="<p class='modal-p'><strong>Ascenso de Cargo por Desempeño:</strong></p><ul class='modal-list'><li>Planificación y diseño de casos de prueba funcionales, de regresión y de integración para la suite corporativa.</li><li>Aseguramiento de la estabilidad y cumplimiento de estándares de calidad en cada despliegue de producto.</li><li>Identificación temprana, análisis detallado y documentación de bugs en estrecha colaboración con desarrolladores y gerencia.</li><li>Optimización y estandarización del flujo de testing en el ciclo de vida de desarrollo de software.</li></ul>">
+              <span class="timeline-badge">Rol Actual · Ascenso</span>
+              <h3 class="timeline-title">QA Analyst (Analista de Aseguramiento de Calidad)</h3>
+              <div class="timeline-company">Naowee Suite S.A.S</div>
+              <span class="timeline-period">01 Agosto 2026 – Actualmente Laborando</span>
+              <p class="timeline-snippet">
+                Promovido a Analista de Calidad. Encargado del aseguramiento de estándares de software, ejecución de pruebas exhaustivas y optimización de entrega de producto.
+              </p>
+              <div class="timeline-tags">
+                <span class="tag-badge">QA Testing</span>
+                <span class="tag-badge">Bug Tracking</span>
+                <span class="tag-badge">Quality Assurance</span>
+                <span class="tag-badge">Test Cases</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Naowee Suite - Atención al Usuario -->
+          <div class="timeline-item reveal-up">
+            <div class="timeline-node"></div>
+            <div class="timeline-card hover-card modal-trigger"
+                 data-modal-title="Atención al Usuario / Soporte Técnico"
+                 data-modal-subtitle="Naowee Suite S.A.S · 01/10/2025 - 01/08/2026"
+                 data-modal-content="<p class='modal-p'><strong>Funciones Principales:</strong></p><ul class='modal-list'><li>Atención directa y resolución de requerimientos de usuarios respecto a los módulos de la plataforma Naowee Suite.</li><li>Diagnóstico de problemas técnicos y gestión oportuna de incidencias en primera y segunda línea.</li><li>Capacitación y orientación al cliente en el correcto uso de los sistemas.</li><li>Excelente desempeño que facilitó el ascenso al área de QA y control de calidad.</li></ul>">
+              <h3 class="timeline-title">Atención al Usuario & Soporte</h3>
+              <div class="timeline-company">Naowee Suite S.A.S</div>
+              <span class="timeline-period">01 Octubre 2025 – 01 Agosto 2026</span>
+              <p class="timeline-snippet">
+                Gestión de incidencias de usuarios, asesoría técnica de primer nivel y acompañamiento constante en el ecosistema digital de la empresa.
+              </p>
+              <div class="timeline-tags">
+                <span class="tag-badge">Atención al Usuario</span>
+                <span class="tag-badge">Soporte Técnico</span>
+                <span class="tag-badge">Gestión de Incidentes</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. INGTELREDES DE LA COSTA -->
+          <div class="timeline-item reveal-up">
+            <div class="timeline-node"></div>
+            <div class="timeline-card hover-card modal-trigger"
+                 data-modal-title="Especialista en Mantenimiento de Redes y Soporte"
+                 data-modal-subtitle="Ingtelredes de la Costa · 06/2023 - 12/2023"
+                 data-modal-content="<p class='modal-p'><strong>Jefe Inmediato:</strong> Gabriel Barros (Contacto: 3158327254)</p><p class='modal-p'><strong>Responsabilidades:</strong></p><ul class='modal-list'><li>Mantenimiento preventivo y correctivo de puntos de acceso (AP) y racks de servidores, garantizando la continuidad de la red.</li><li>Atención y resolución de consultas técnicas en tiempo real.</li><li>Elaboración de presupuestos para adquisición de equipos y materiales optimizando recursos.</li><li>Programación y coordinación de despliegues de infraestructura según normas de calidad.</li></ul><p class='modal-p'><strong>Logros:</strong> Reducción del tiempo de respuesta a solicitudes de clientes en un 30% y cumplimiento del 100% de estándares de mantenimiento.</p>">
+              <h3 class="timeline-title">Especialista en Mantenimiento de Redes y Soporte</h3>
+              <div class="timeline-company">Ingtelredes de la Costa (Prácticas Universitarias)</div>
+              <span class="timeline-period">Junio 2023 – Diciembre 2023</span>
+              <p class="timeline-snippet">
+                Mantenimiento de APs y racks de servidores, soporte técnico a clientes y coordinación de infraestructura de red.
+              </p>
+              <div class="timeline-tags">
+                <span class="tag-badge">Redes & AP</span>
+                <span class="tag-badge">Racks de Servidores</span>
+                <span class="tag-badge">Fibra Óptica</span>
+                <span class="tag-badge">Presupuestos</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. GRUPO 3-34 CONSTRUCTORA -->
+          <div class="timeline-item reveal-up">
+            <div class="timeline-node"></div>
+            <div class="timeline-card hover-card modal-trigger"
+                 data-modal-title="Diseñador Eléctrico de Proyectos de Construcción"
+                 data-modal-subtitle="Grupo 3-34 Constructora · 02/2023 - 06/2023"
+                 data-modal-content="<p class='modal-p'><strong>Jefe Inmediato:</strong> Daniel Fernandez (Contacto: 3206948422)</p><p class='modal-p'><strong>Responsabilidades:</strong></p><ul class='modal-list'><li>Diseño de planos eléctricos para urbanizaciones, bodegas y casas utilizando AutoCAD y Dialux.</li><li>Elaboración de cuadros de cargas y memorias de cálculo bajo normativas RETIE y NTC 2050.</li><li>Elaboración de presupuestos eléctricos de obras en Excel junto a arquitectos e ingenieros.</li></ul><p class='modal-p'><strong>Logros:</strong> Implementación de procesos de diseño que aseguraron el cumplimiento estricto de RETIE y NTC 2050 con entregas 100% puntuales.</p>">
+              <h3 class="timeline-title">Diseñador Eléctrico de Proyectos</h3>
+              <div class="timeline-company">Grupo 3-34 Constructora</div>
+              <span class="timeline-period">Febrero 2023 – Junio 2023</span>
+              <p class="timeline-snippet">
+                Diseño de planos eléctricos residenciales e industriales en AutoCAD y Dialux, cuadros de cargas y cumplimiento estricto RETIE y NTC 2050.
+              </p>
+              <div class="timeline-tags">
+                <span class="tag-badge">AutoCAD</span>
+                <span class="tag-badge">Dialux</span>
+                <span class="tag-badge">Normativa RETIE</span>
+                <span class="tag-badge">NTC 2050</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. TECNOMOVIL DE SABANALARGA -->
+          <div class="timeline-item reveal-up">
+            <div class="timeline-node"></div>
+            <div class="timeline-card hover-card modal-trigger"
+                 data-modal-title="Asesor Técnico y de Ventas"
+                 data-modal-subtitle="TecnoMovil de Sabanalarga · 11/2022 - 01/2023"
+                 data-modal-content="<p class='modal-p'><strong>Jefe Inmediato:</strong> Romario Daza (Contacto: 3225338319)</p><p class='modal-p'><strong>Responsabilidades:</strong></p><ul class='modal-list'><li>Venta y asesoría técnica de terminales móviles y accesorios.</li><li>Reparación física y lógica de dispositivos (diagnóstico de hardware y software).</li><li>Atención al cliente con altos índices de satisfacción.</li></ul><p class='modal-p'><strong>Logros:</strong> Incremento sostenido en cumplimiento de metas comerciales y servicio posventa confiable.</p>">
+              <h3 class="timeline-title">Asesor Técnico y de Ventas</h3>
+              <div class="timeline-company">TecnoMovil de Sabanalarga</div>
+              <span class="timeline-period">Noviembre 2022 – Enero 2023</span>
+              <p class="timeline-snippet">
+                Diagnóstico y reparación de hardware/software móvil, venta consultiva y soporte al usuario.
+              </p>
+              <div class="timeline-tags">
+                <span class="tag-badge">Reparación Hardware</span>
+                <span class="tag-badge">Soporte Móvil</span>
+                <span class="tag-badge">Ventas Técnicas</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 03. FORMACIÓN ACADÉMICA -->
+    <section id="education" class="section">
+      <div class="section-container">
+        <h2 class="section-title reveal-up">
+          <span class="title-tag">03.</span> Formación Académica
+        </h2>
+        <div class="edu-grid">
+          <div class="edu-card hover-card reveal-left">
+            <div class="edu-icon"><i class="fas fa-microchip"></i></div>
+            <h3 class="edu-title">Pregrado en Ingeniería Electrónica</h3>
+            <div class="edu-school">Universidad de la Costa (CUC)</div>
+            <span class="edu-period">2018 – 2024 · Titulado</span>
+          </div>
+          <div class="edu-card hover-card reveal-right">
+            <div class="edu-icon"><i class="fas fa-school"></i></div>
+            <h3 class="edu-title">Bachiller Inteligencias Múltiples</h3>
+            <div class="edu-school">I. E. Howard Gardner Bilingual School</div>
+            <span class="edu-period">2011 – 2017</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04. HABILIDADES TÉCNICAS -->
+    <section id="skills" class="section">
+      <div class="section-container">
+        <h2 class="section-title reveal-up">
+          <span class="title-tag">04.</span> Habilidades y Competencias
+        </h2>
+        <div class="skills-wrapper">
+          <div class="skill-box hover-card reveal-up">
+            <h3 class="skill-box-title"><i class="fas fa-network-wired"></i> Telecomunicaciones, Redes & TI</h3>
+            <div class="skill-chips">
+              <span class="chip">Mantenimiento de Redes</span>
+              <span class="chip">Fibra Óptica</span>
+              <span class="chip">Puntos de Acceso (AP)</span>
+              <span class="chip">Racks de Servidores</span>
+              <span class="chip">Resolución de Consultas Técnicas</span>
+              <span class="chip">Infraestructura de Conectividad</span>
+            </div>
+          </div>
+
+          <div class="skill-box hover-card reveal-up delay-1">
+            <h3 class="skill-box-title"><i class="fas fa-check-double"></i> QA & Gestión de Calidad</h3>
+            <div class="skill-chips">
+              <span class="chip">QA Analyst</span>
+              <span class="chip">Testing Funcional</span>
+              <span class="chip">Reporte y Seguimiento de Bugs</span>
+              <span class="chip">Mejora Continua de Procesos</span>
+              <span class="chip">Atención y Soporte al Usuario</span>
+              <span class="chip">Atención al Detalle</span>
+            </div>
+          </div>
+
+          <div class="skill-box hover-card reveal-up delay-2">
+            <h3 class="skill-box-title"><i class="fas fa-drafting-compass"></i> Diseño Eléctrico & Herramientas de Ingeniería</h3>
+            <div class="skill-chips">
+              <span class="chip">AutoCAD</span>
+              <span class="chip">Dialux</span>
+              <span class="chip">Normativa RETIE</span>
+              <span class="chip">Normativa NTC 2050</span>
+              <span class="chip">Cuadros de Cargas</span>
+              <span class="chip">Presupuestos Eléctricos</span>
+            </div>
+          </div>
+
+          <div class="skill-box hover-card reveal-up delay-3">
+            <h3 class="skill-box-title"><i class="fas fa-laptop-code"></i> Software & Análisis de Datos</h3>
+            <div class="skill-chips">
+              <span class="chip">Python para Data Science & AI</span>
+              <span class="chip">Visualización de Datos</span>
+              <span class="chip">Excel Intermedio / Avanzado</span>
+              <span class="chip">Raspberry Pi Platform</span>
+              <span class="chip">Herramientas Ofimáticas</span>
+              <span class="chip">Gestión del Tiempo y Liderazgo</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05. CERTIFICACIONES -->
+    <section id="certifications" class="section">
+      <div class="section-container">
+        <h2 class="section-title reveal-up">
+          <span class="title-tag">05.</span> Certificaciones & Cursos
+        </h2>
+        <div class="cert-grid">
+          <div class="cert-card hover-card reveal-up modal-trigger"
+               data-modal-title="Diplomado Gestión de Transferencia de Conocimiento y Tecnología"
+               data-modal-subtitle="Universidad de la Costa (CUC) · 2024"
+               data-modal-content="<p class='modal-p'>Formación especializada en transferencia tecnológica, metodologías de innovación y gestión estratégica de conocimiento (Duración: 96 Horas).</p>">
+            <h3 class="cert-card-title">Gestión de Transferencia de Conocimiento y Tecnología</h3>
+            <div class="cert-card-entity">CUC · 96 Horas</div>
+            <span class="cert-card-year">2024</span>
+          </div>
+
+          <div class="cert-card hover-card reveal-up delay-1 modal-trigger"
+               data-modal-title="Python for Data Science and AI"
+               data-modal-subtitle="CUC - IBM · 2022"
+               data-modal-content="<p class='modal-p'>Visualización y análisis exploratorio de datos utilizando librerías fundamentales de Python (Duración: 26 Horas).</p>">
+            <h3 class="cert-card-title">Python for Data Science and AI: Visualización de Datos</h3>
+            <div class="cert-card-entity">CUC – IBM · 26 Horas</div>
+            <span class="cert-card-year">2022</span>
+          </div>
+
+          <div class="cert-card hover-card reveal-up delay-2 modal-trigger"
+               data-modal-title="The Raspberry Pi Platform and Python Programming"
+               data-modal-subtitle="COURSERA · 2021"
+               data-modal-content="<p class='modal-p'>Programación de sistemas embebidos, automatización y control mediante Raspberry Pi y Python.</p>">
+            <h3 class="cert-card-title">The Raspberry Pi Platform and Python Programming</h3>
+            <div class="cert-card-entity">COURSERA</div>
+            <span class="cert-card-year">2021</span>
+          </div>
+
+          <div class="cert-card hover-card reveal-up delay-3 modal-trigger"
+               data-modal-title="Python Basics"
+               data-modal-subtitle="COURSERA · 2021"
+               data-modal-content="<p class='modal-p'>Fundamentos y lógica de programación estructurada en lenguaje Python.</p>">
+            <h3 class="cert-card-title">Python Basics</h3>
+            <div class="cert-card-entity">COURSERA</div>
+            <span class="cert-card-year">2021</span>
+          </div>
+
+          <div class="cert-card hover-card reveal-up delay-4 modal-trigger"
+               data-modal-title="Curso Introductorio a la Formación Profesional Integral"
+               data-modal-subtitle="SENA · 2020"
+               data-modal-content="<p class='modal-p'>Metodologías y competencias integrales aplicadas al entorno profesional (Duración: 336 Horas).</p>">
+            <h3 class="cert-card-title">Formación Profesional Integral</h3>
+            <div class="cert-card-entity">SENA · 336 Horas</div>
+            <span class="cert-card-year">2020</span>
+          </div>
+
+          <div class="cert-card hover-card reveal-up delay-5 modal-trigger"
+               data-modal-title="Curso Excel Intermedio"
+               data-modal-subtitle="CUC · 2019"
+               data-modal-content="<p class='modal-p'>Fórmulas intermedias, funciones condicionales y manejo dinámico de bases de datos numéricas (Duración: 20 Horas).</p>">
+            <h3 class="cert-card-title">Curso Excel Intermedio</h3>
+            <div class="cert-card-entity">CUC · 20 Horas</div>
+            <span class="cert-card-year">2019</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06. IDIOMAS -->
+    <section id="languages" class="section">
+      <div class="section-container">
+        <h2 class="section-title reveal-up">
+          <span class="title-tag">06.</span> Idiomas
+        </h2>
+        <div class="lang-grid">
+          <div class="lang-card hover-card reveal-left">
+            <div class="lang-flag">🇨🇴</div>
+            <h3 class="lang-name">Español</h3>
+            <span class="lang-level">Nativo</span>
+            <div class="lang-dots">
+              <span class="lang-dot active"></span>
+              <span class="lang-dot active"></span>
+              <span class="lang-dot active"></span>
+              <span class="lang-dot active"></span>
+              <span class="lang-dot active"></span>
+            </div>
+          </div>
+          <div class="lang-card hover-card reveal-right">
+            <div class="lang-flag">🇺🇸</div>
+            <h3 class="lang-name">Inglés</h3>
+            <span class="lang-level">Bilingüe (Howard Gardner Bilingual School)</span>
+            <div class="lang-dots">
+              <span class="lang-dot active"></span>
+              <span class="lang-dot active"></span>
+              <span class="lang-dot active"></span>
+              <span class="lang-dot active"></span>
+              <span class="lang-dot"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07. CONTACTO -->
+    <section id="contact" class="section">
+      <div class="section-container">
+        <h2 class="section-title reveal-up">
+          <span class="title-tag">07.</span> Contacto
+        </h2>
+        <div class="contact-container">
+          <p class="contact-intro reveal-up delay-1">
+            ¿Interesado en mi perfil o en una propuesta laboral? Estaré complacido de conectar contigo.
+          </p>
+          <div class="contact-cards reveal-up delay-2">
+            <a href="mailto:inghfjose@gmail.com" class="contact-box hover-card">
+              <i class="fas fa-envelope"></i>
+              <span class="contact-label">Correo</span>
+              <span class="contact-val">inghfjose@gmail.com</span>
+            </a>
+            <a href="tel:+573137291081" class="contact-box hover-card">
+              <i class="fas fa-phone-alt"></i>
+              <span class="contact-label">Teléfono</span>
+              <span class="contact-val">313 729 1081 / 311 707 7474</span>
+            </a>
+            <div class="contact-box hover-card">
+              <i class="fas fa-map-marker-alt"></i>
+              <span class="contact-label">Ubicación</span>
+              <span class="contact-val">Barranquilla Atl., Colombia</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>Diseñado y desarrollado por <strong>Jose Herrera</strong></p>
+      <p style="margin-top: 6px; font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent-silver);">
+        &copy; 2026 Todos los derechos reservados · Ingeniero Electrónico & QA Analyst
+      </p>
+    </footer>
+
+  </main>
+
+  <!-- MODAL SUAVE DE DETALLES (COMPACTA Y ELEGANTE) -->
+  <div class="modal-overlay" id="detailsModal">
+    <div class="modal-window">
+      <button class="modal-close" id="closeModalBtn" aria-label="Cerrar"><i class="fas fa-times"></i></button>
+      <h3 id="modalTitle" class="modal-title"></h3>
+      <div id="modalSubtitle" class="modal-subtitle"></div>
+      <div id="modalBody" class="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

@@ -195,17 +195,26 @@ class NavigationController {
   initMobileNav() {
     const toggle = document.getElementById('mobileNavToggle');
     const nav = document.getElementById('sideNav');
-    toggle?.addEventListener('click', () => {
-      toggle.classList.toggle('active');
-      nav?.classList.toggle('open');
-    });
+    const backdrop = document.getElementById('menuBackdrop');
 
-    // Cerrar menú al hacer click afuera en móvil
-    document.addEventListener('click', (e) => {
-      if (nav?.classList.contains('open') && !nav.contains(e.target) && !toggle?.contains(e.target)) {
-        nav.classList.remove('open');
-        toggle?.classList.remove('active');
-      }
+    const toggleMenu = () => {
+      const isOpen = nav?.classList.toggle('open');
+      toggle?.classList.toggle('active', isOpen);
+      backdrop?.classList.toggle('open', isOpen);
+    };
+
+    const closeMenu = () => {
+      nav?.classList.remove('open');
+      toggle?.classList.remove('active');
+      backdrop?.classList.remove('open');
+    };
+
+    toggle?.addEventListener('click', toggleMenu);
+    backdrop?.addEventListener('click', closeMenu);
+
+    // Cerrar al dar clic en cualquier enlace
+    this.links.forEach((link) => {
+      link.addEventListener('click', closeMenu);
     });
   }
 }

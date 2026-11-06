@@ -118,43 +118,77 @@
   font-weight: 500;
 }
 
-/* Botón Hamburguesa móvil */
+/* ============================================
+   BOTÓN HAMBURGUESA / X (CON COLOR BLANCO VISIBLE)
+   ============================================ */
 .mobile-nav-toggle {
   display: none;
   position: fixed;
   top: 16px;
-  right: 16px; /* Cambiado a la derecha para no tapar el nombre "Jose Herrera" */
+  right: 16px;
   left: auto;
   width: 44px;
   height: 44px;
   border-radius: 12px;
   border: 1px solid var(--accent-border-hover);
-  background: rgba(14, 14, 22, 0.92);
+  background: rgba(14, 14, 22, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  z-index: 1200;
+  z-index: 2500; /* Siempre por encima del menú */
   cursor: pointer;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   gap: 5px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
-}
-.hamburger-line {
-  width: 20px;
-  height: 2px;
-  background: #ffffff;
-  border-radius: 2px;
   transition: all var(--transition-fast);
 }
+
+.hamburger-line {
+  width: 20px;
+  height: 2.2px;
+  background: #ffffff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Cuando está activo (abierto) se convierte en una X BLANCA bien brillante */
+.mobile-nav-toggle.active {
+  background: #ffffff !important;
+  border-color: #ffffff !important;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.6) !important;
+  transform: scale(1.05);
+}
+.mobile-nav-toggle.active .hamburger-line {
+  background: #000000 !important; /* Las líneas de la X en contraste negro sobre fondo blanco */
+  height: 2.5px;
+}
 .mobile-nav-toggle.active .hamburger-line:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
+  transform: translateY(7.2px) rotate(45deg);
 }
 .mobile-nav-toggle.active .hamburger-line:nth-child(2) {
   opacity: 0;
+  transform: scale(0);
 }
 .mobile-nav-toggle.active .hamburger-line:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
+  transform: translateY(-7.2px) rotate(-45deg);
+}
+
+/* Backdrop oscuro para tapar el fondo al abrir el menú en celular */
+.menu-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1400;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.menu-backdrop.open {
+  display: block;
+  opacity: 1;
 }
 
 /* Contenido Principal */
@@ -338,57 +372,80 @@
     --section-padding: 35px;
   }
 
-  /* El sidebar en móvil NO debe flotar transparente sobre el texto */
+  /* DRAWER LATERAL MÓVIL 100% SÓLIDO Y LIMPIO */
   .side-nav {
     transform: translateX(-100%);
-    width: 280px;
-    background: #08080e; /* Fondo 100% sólido y oscuro */
-    box-shadow: 20px 0 60px rgba(0, 0, 0, 0.95);
+    width: 290px;
+    background: #090910 !important; /* Totalmente opaco para no transparentar el texto detrás */
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 25px 0 70px rgba(0, 0, 0, 0.98);
     align-items: flex-start;
-    padding: 28px 20px;
+    padding: 26px 20px;
     z-index: 1500;
-    visibility: hidden; /* Oculto completamente para no interferir con el texto */
+    transition: transform 0.35s var(--ease-smooth);
   }
   .side-nav.open {
     transform: translateX(0);
-    visibility: visible;
   }
 
   .nav-logo {
     margin-bottom: 22px;
   }
+
   .nav-links {
     width: 100%;
-    gap: 6px;
+    gap: 8px;
   }
+
+  /* Items del menú en móvil: Icono + Texto perfectamente alineados en fila */
   .nav-link {
     width: 100%;
-    height: 48px;
+    height: 46px;
     justify-content: flex-start;
     padding: 0 16px;
     gap: 14px;
     border-radius: 12px;
     background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    flex-direction: row;
+    position: relative;
+  }
+  .nav-link::before {
+    display: none; /* Quitamos la línea vertical descolocada en móvil */
+  }
+  .nav-link.active {
+    background: rgba(255, 255, 255, 0.12) !important;
+    border-color: #ffffff !important;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
   }
   .nav-link i {
     font-size: 16px;
     width: 20px;
     text-align: center;
+    color: #ffffff;
+    flex-shrink: 0;
   }
-  /* En móvil el tooltip se convierte en el texto dentro del botón del menú */
+
+  /* Texto al lado del icono */
   .nav-tooltip {
-    position: static;
+    position: static !important;
     opacity: 1 !important;
-    pointer-events: auto;
+    pointer-events: auto !important;
     background: transparent !important;
     border: none !important;
     box-shadow: none !important;
-    padding: 0;
+    padding: 0 !important;
     transform: none !important;
     color: #ffffff !important;
-    font-size: 14px;
+    font-size: 14.5px;
     font-weight: 600;
+    white-space: nowrap;
+    display: inline-block;
+  }
+
+  .nav-footer-indicator {
+    margin-top: auto;
+    padding-top: 15px;
   }
 
   .mobile-nav-toggle {
@@ -397,10 +454,9 @@
 
   .main-content {
     margin-left: 0;
-    padding-top: 20px;
+    padding-top: 10px;
   }
 
-  /* Padding superior adecuado para que el notch y la barra no tapen el texto */
   .hero-section {
     padding-top: 55px !important;
     padding-bottom: 30px !important;
@@ -430,7 +486,6 @@
     margin-bottom: 28px;
   }
 
-  /* Botones en móvil: ordenados y cómodos para tocar */
   .hero-actions {
     flex-direction: column;
     width: 100%;
@@ -444,7 +499,6 @@
     font-size: 0.95rem;
   }
 
-  /* Estadísticas en móvil */
   .hero-stats {
     flex-direction: row;
     flex-wrap: wrap;

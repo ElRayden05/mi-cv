@@ -1,7 +1,9 @@
 /* ============================================
    BARRA LATERAL IZQUIERDA (SELECT / NAVEGACIÓN)
-   Y DISEÑO RESPONSIVE PARA MÓVILES IMPECABLE
+   Desktop & Mobile Impecable con Desenfoque
    ============================================ */
+
+/* ---- DESKTOP (Pantallas > 768px) ---- */
 .side-nav {
   position: fixed;
   left: 0;
@@ -88,7 +90,7 @@
   height: 20px;
 }
 
-/* Tooltip en Desktop */
+/* Tooltip elegante al lado del icono en PC */
 .nav-tooltip {
   position: absolute;
   left: 64px;
@@ -118,77 +120,14 @@
   font-weight: 500;
 }
 
-/* ============================================
-   BOTÓN HAMBURGUESA / X (CON COLOR BLANCO VISIBLE)
-   ============================================ */
-.mobile-nav-toggle {
-  display: none;
-  position: fixed;
-  top: 16px;
-  right: 16px;
-  left: auto;
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  border: 1px solid var(--accent-border-hover);
-  background: rgba(14, 14, 22, 0.95);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  z-index: 2500; /* Siempre por encima del menú */
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 5px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
-  transition: all var(--transition-fast);
-}
-
-.hamburger-line {
-  width: 20px;
-  height: 2.2px;
-  background: #ffffff;
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-/* Cuando está activo (abierto) se convierte en una X BLANCA bien brillante */
-.mobile-nav-toggle.active {
-  background: #ffffff !important;
-  border-color: #ffffff !important;
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.6) !important;
-  transform: scale(1.05);
-}
-.mobile-nav-toggle.active .hamburger-line {
-  background: #000000 !important; /* Las líneas de la X en contraste negro sobre fondo blanco */
-  height: 2.5px;
-}
-.mobile-nav-toggle.active .hamburger-line:nth-child(1) {
-  transform: translateY(7.2px) rotate(45deg);
-}
-.mobile-nav-toggle.active .hamburger-line:nth-child(2) {
-  opacity: 0;
-  transform: scale(0);
-}
-.mobile-nav-toggle.active .hamburger-line:nth-child(3) {
-  transform: translateY(-7.2px) rotate(-45deg);
-}
-
-/* Backdrop oscuro para tapar el fondo al abrir el menú en celular */
+/* Backdrop desenfocado al abrir el menú en móvil */
 .menu-backdrop {
   display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  z-index: 1400;
-  opacity: 0;
-  transition: opacity 0.35s ease;
 }
-.menu-backdrop.open {
-  display: block;
-  opacity: 1;
+
+/* Toggle hamburguesa oculto en PC */
+.mobile-nav-toggle {
+  display: none;
 }
 
 /* Contenido Principal */
@@ -358,7 +297,7 @@
 }
 
 /* ============================================
-   RESPONSIVE DESIGN PARA CELULARES Y TABLETS
+   RESPONSIVE DESIGN PARA MÓVILES (<= 768px)
    ============================================ */
 @media (max-width: 992px) {
   .section {
@@ -372,61 +311,96 @@
     --section-padding: 35px;
   }
 
-  /* DRAWER LATERAL MÓVIL 100% SÓLIDO Y LIMPIO */
+  .main-content {
+    margin-left: 0 !important;
+    padding-top: 10px;
+  }
+
+  /* Backdrop con desenfoque elegante */
+  .menu-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1400;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+  }
+  .menu-backdrop.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Menú lateral (Drawer) en móvil */
   .side-nav {
-    transform: translateX(-100%);
-    width: 290px;
-    background: #090910 !important; /* Totalmente opaco para no transparentar el texto detrás */
-    border-right: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 25px 0 70px rgba(0, 0, 0, 0.98);
-    align-items: flex-start;
-    padding: 26px 20px;
-    z-index: 1500;
-    transition: transform 0.35s var(--ease-smooth);
+    display: flex !important;
+    position: fixed !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 280px !important;
+    height: 100vh !important;
+    background: #090910 !important; /* Totalmente sólido para no traslapar nada */
+    border-right: 1px solid rgba(255, 255, 255, 0.15) !important;
+    box-shadow: 20px 0 60px rgba(0, 0, 0, 0.95) !important;
+    padding: 28px 20px !important;
+    z-index: 1500 !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    transform: translateX(-100%) !important; /* Fuera de pantalla por defecto */
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    pointer-events: none;
   }
   .side-nav.open {
-    transform: translateX(0);
+    transform: translateX(0) !important; /* Entra suavemente */
+    pointer-events: auto !important;
   }
 
   .nav-logo {
-    margin-bottom: 22px;
+    margin-bottom: 24px;
   }
 
   .nav-links {
     width: 100%;
     gap: 8px;
+    display: flex;
+    flex-direction: column;
   }
 
-  /* Items del menú en móvil: Icono + Texto perfectamente alineados en fila */
+  /* Cada fila del menú: Icono + Texto perfectamente ordenados */
   .nav-link {
-    width: 100%;
-    height: 46px;
-    justify-content: flex-start;
-    padding: 0 16px;
-    gap: 14px;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    flex-direction: row;
-    position: relative;
+    width: 100% !important;
+    height: 48px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    padding: 0 16px !important;
+    gap: 14px !important;
+    border-radius: 12px !important;
+    background: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    position: relative !important;
   }
   .nav-link::before {
-    display: none; /* Quitamos la línea vertical descolocada en móvil */
+    display: none !important; /* Quitamos la línea vertical */
   }
   .nav-link.active {
     background: rgba(255, 255, 255, 0.12) !important;
     border-color: #ffffff !important;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1) !important;
   }
   .nav-link i {
-    font-size: 16px;
-    width: 20px;
-    text-align: center;
-    color: #ffffff;
-    flex-shrink: 0;
+    font-size: 16px !important;
+    width: 22px !important;
+    text-align: center !important;
+    color: #ffffff !important;
+    flex-shrink: 0 !important;
   }
 
-  /* Texto al lado del icono */
+  /* El texto del menú al lado del icono: fijo y visible en móvil */
   .nav-tooltip {
     position: static !important;
     opacity: 1 !important;
@@ -437,26 +411,72 @@
     padding: 0 !important;
     transform: none !important;
     color: #ffffff !important;
-    font-size: 14.5px;
-    font-weight: 600;
-    white-space: nowrap;
-    display: inline-block;
+    font-size: 14.5px !important;
+    font-weight: 600 !important;
+    white-space: nowrap !important;
+    display: inline-block !important;
   }
 
   .nav-footer-indicator {
     margin-top: auto;
-    padding-top: 15px;
+    padding-top: 20px;
+    color: var(--accent-silver);
   }
 
+  /* Botón hamburguesa / X en móvil */
   .mobile-nav-toggle {
-    display: flex;
+    display: flex !important;
+    position: fixed !important;
+    top: 16px !important;
+    right: 16px !important;
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 12px !important;
+    border: 1px solid var(--accent-border-hover) !important;
+    background: rgba(14, 14, 22, 0.95) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    z-index: 2500 !important; /* Por encima de todo */
+    cursor: pointer !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-direction: column !important;
+    gap: 5px !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7) !important;
+    transition: all var(--transition-fast) !important;
   }
 
-  .main-content {
-    margin-left: 0;
-    padding-top: 10px;
+  .hamburger-line {
+    width: 20px;
+    height: 2.2px;
+    background: #ffffff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
   }
 
+  /* Cuando se abre el menú: botón blanco brillante con X negra contrastada */
+  .mobile-nav-toggle.active {
+    background: #ffffff !important;
+    border-color: #ffffff !important;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.7) !important;
+    transform: scale(1.05);
+  }
+  .mobile-nav-toggle.active .hamburger-line {
+    background: #000000 !important;
+    height: 2.5px;
+  }
+  .mobile-nav-toggle.active .hamburger-line:nth-child(1) {
+    transform: translateY(7.2px) rotate(45deg);
+  }
+  .mobile-nav-toggle.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+    transform: scale(0);
+  }
+  .mobile-nav-toggle.active .hamburger-line:nth-child(3) {
+    transform: translateY(-7.2px) rotate(-45deg);
+  }
+
+  /* Ajustes de secciones en móvil */
   .hero-section {
     padding-top: 55px !important;
     padding-bottom: 30px !important;

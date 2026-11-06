@@ -1,5 +1,5 @@
-/* Importación de módulos CSS organizados */
-@import url('base/variables.css');
-@import url('base/animations.css');
-@import url('layout/navigation.css');
-@import url('sections/sections.css');
+/* Importación de módulos CSS organizados con versionado */
+@import url('base/variables.css?v=2.0');
+@import url('base/animations.css?v=2.0');
+@import url('layout/navigation.css?v=2.0');
+@import url('sections/sections.css?v=2.0');

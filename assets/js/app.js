@@ -264,6 +264,33 @@ class ModalController {
   }
 }
 
+// Videos de proyectos: reproducen en loop al pasar el mouse, se pausan al salir
+class ProjectVideoHover {
+  constructor() {
+    document.querySelectorAll('[data-video-hover]').forEach((wrap) => {
+      const video = wrap.querySelector('video');
+      if (!video) return;
+
+      wrap.addEventListener('mouseenter', () => {
+        video.play().catch(() => {});
+      });
+      wrap.addEventListener('mouseleave', () => {
+        video.pause();
+        video.currentTime = 0;
+      });
+
+      // En táctil: tocar el video alterna play/pausa
+      video.addEventListener('click', () => {
+        if (video.paused) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      });
+    });
+  }
+}
+
 class SmoothEffects {
   constructor() {
     this.initCursorGlow();
@@ -317,6 +344,7 @@ document.addEventListener('DOMContentLoaded', () => {
   new ScrollObserver();
   new NavigationController();
   new ModalController();
+  new ProjectVideoHover();
   new SmoothEffects();
 
   const typewriter = document.getElementById('typewriter');

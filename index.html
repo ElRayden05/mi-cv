@@ -50,6 +50,12 @@
         </a>
       </li>
       <li>
+        <a href="#projects" class="nav-link" data-section="projects">
+          <i class="fas fa-diagram-project"></i>
+          <span class="nav-tooltip">Proyectos</span>
+        </a>
+      </li>
+      <li>
         <a href="#education" class="nav-link" data-section="education">
           <i class="fas fa-graduation-cap"></i>
           <span class="nav-tooltip">Educación</span>
@@ -317,11 +323,78 @@
       </div>
     </section>
 
-    <!-- 03. FORMACIÓN ACADÉMICA -->
+    <!-- 03. PROYECTOS DEV -->
+    <section id="projects" class="section">
+      <div class="section-container">
+        <h2 class="section-title reveal-up">
+          <span class="title-tag">03.</span> Proyectos Dev
+        </h2>
+        <p class="projects-intro reveal-up delay-1">
+          Aplicaciones web desarrolladas por mí, fuera del entorno laboral. Explora, pruébalas en vivo y conoce los detalles técnicos.
+        </p>
+        <div class="projects-grid">
+
+          <!-- PROYECTO: GeoExplorer -->
+          <article class="project-card hover-card reveal-up">
+            <div class="project-media" data-video-hover>
+              <video
+                class="project-video"
+                src="assets/video/geo-explorer-preview.mp4"
+                muted
+                loop
+                playsinline
+                preload="metadata"
+              ></video>
+              <span class="project-badge"><i class="fas fa-star"></i> Proyecto Destacado</span>
+              <div class="project-media-overlay">
+                <span class="project-play-btn"><i class="fas fa-play"></i></span>
+                <span class="project-play-hint">Pasa el mouse para ver la demo</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-header">
+                <div>
+                  <h3 class="project-title">GeoExplorer</h3>
+                  <span class="project-subtitle">Buscador de Lugares en el Mapa & Galería</span>
+                </div>
+                <span class="project-year">2026</span>
+              </div>
+              <p class="project-desc">
+                Aplicación web para explorar cualquier lugar del mundo en tiempo real: búsqueda inteligente
+                con autocompletado, mapa interactivo, fotos reales de Wikipedia y enlaces de navegación
+                (Google Maps, Waze, Apple Maps). Historial persistente sin necesidad de API keys.
+              </p>
+              <div class="timeline-tags">
+                <span class="tag-badge">JavaScript</span>
+                <span class="tag-badge">Leaflet / OpenStreetMap</span>
+                <span class="tag-badge">Nominatim API</span>
+                <span class="tag-badge">IndexedDB</span>
+                <span class="tag-badge">Wikipedia API</span>
+                <span class="tag-badge">Responsive Design</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://elrayden05.github.io/geo-explorer-app" target="_blank" rel="noopener noreferrer" class="btn btn-white project-btn">
+                  <i class="fas fa-arrow-up-right-from-square"></i> Ver en vivo
+                </a>
+                <button type="button" class="btn btn-ghost project-btn modal-trigger"
+                        data-modal-title="GeoExplorer — Buscador de Lugares & Galería"
+                        data-modal-subtitle="Proyecto personal · 2026 · JavaScript + Leaflet"
+                        data-modal-content="<p class='modal-p'><strong>¿Qué es?</strong></p><p class='modal-p'>Una SPA (Single Page Application) para explorar lugares del mundo en tiempo real, construida 100% con tecnologías gratuitas y open source.</p><p class='modal-p'><strong>Características principales:</strong></p><ul class='modal-list'><li>Búsqueda global con autocompletado en vivo (Nominatim / OpenStreetMap)</li><li>Priorización de resultados locales (Barranquilla) con fallback mundial</li><li>Mapa interactivo con tiles de respaldo automático (Esri, CARTO, OSM)</li><li>Galería de fotos reales por geolocalización (Wikipedia API)</li><li>Enlaces directos de navegación: Google Maps, Waze y Apple Maps</li><li>Historial de búsquedas persistente con IndexedDB + LocalStorage</li><li>Botón de geolocalización GPS y compartir ubicación (WhatsApp, X, Telegram)</li><li>Fondo de partículas interactivo y animaciones en toda la interfaz</li></ul><p class='modal-p'><strong>Stack:</strong> JavaScript vanilla, Leaflet, Tailwind CSS (CDN), FontAwesome, IndexedDB.</p>">
+                  <i class="fas fa-circle-info"></i> Ver más
+                </button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 04. FORMACIÓN ACADÉMICA -->
     <section id="education" class="section">
       <div class="section-container">
         <h2 class="section-title reveal-up">
-          <span class="title-tag">03.</span> Formación Académica
+          <span class="title-tag">04.</span> Formación Académica
         </h2>
         <div class="edu-grid">
           <div class="edu-card hover-card reveal-left">
@@ -340,11 +413,11 @@
       </div>
     </section>
 
-    <!-- 04. HABILIDADES TÉCNICAS -->
+    <!-- 05. HABILIDADES TÉCNICAS -->
     <section id="skills" class="section">
       <div class="section-container">
         <h2 class="section-title reveal-up">
-          <span class="title-tag">04.</span> Habilidades y Competencias
+          <span class="title-tag">05.</span> Habilidades y Competencias
         </h2>
         <div class="skills-wrapper">
           <div class="skill-box hover-card reveal-up">
@@ -398,11 +471,11 @@
       </div>
     </section>
 
-    <!-- 05. CERTIFICACIONES -->
+    <!-- 06. CERTIFICACIONES -->
     <section id="certifications" class="section">
       <div class="section-container">
         <h2 class="section-title reveal-up">
-          <span class="title-tag">05.</span> Certificaciones & Cursos
+          <span class="title-tag">06.</span> Certificaciones & Cursos
         </h2>
         <div class="cert-grid">
           <div class="cert-card hover-card reveal-up modal-trigger"
@@ -462,11 +535,11 @@
       </div>
     </section>
 
-    <!-- 06. IDIOMAS -->
+    <!-- 07. IDIOMAS -->
     <section id="languages" class="section">
       <div class="section-container">
         <h2 class="section-title reveal-up">
-          <span class="title-tag">06.</span> Idiomas
+          <span class="title-tag">07.</span> Idiomas
         </h2>
         <div class="lang-grid">
           <div class="lang-card hover-card reveal-left">
@@ -497,11 +570,11 @@
       </div>
     </section>
 
-    <!-- 07. CONTACTO -->
+    <!-- 08. CONTACTO -->
     <section id="contact" class="section">
       <div class="section-container">
         <h2 class="section-title reveal-up">
-          <span class="title-tag">07.</span> Contacto
+          <span class="title-tag">08.</span> Contacto
         </h2>
         <div class="contact-container">
           <p class="contact-intro reveal-up delay-1">

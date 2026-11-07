@@ -62,7 +62,7 @@
   font-weight: 400;
   text-align: justify;
   text-justify: inter-word;
-  hyphens: auto;
+  hyphens: manual;
 }
 .hero-desc strong {
   color: #ffffff;
@@ -205,7 +205,7 @@
   margin-bottom: 22px;
   text-align: justify;
   text-justify: inter-word;
-  hyphens: auto;
+  hyphens: manual;
 }
 .about-text strong {
   color: #ffffff;
@@ -374,7 +374,7 @@
   margin-bottom: 18px;
   text-align: justify;
   text-justify: inter-word;
-  hyphens: auto;
+  hyphens: manual;
 }
 .timeline-tags {
   display: flex;
@@ -619,7 +619,7 @@
   max-width: 640px;
   text-align: justify;
   text-justify: inter-word;
-  hyphens: auto;
+  hyphens: manual;
 }
 
 .projects-grid {
@@ -762,7 +762,7 @@
   line-height: 1.75;
   text-align: justify;
   text-justify: inter-word;
-  hyphens: auto;
+  hyphens: manual;
 }
 .project-actions {
   display: flex;

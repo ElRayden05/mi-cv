@@ -741,6 +741,25 @@
   font-weight: 800;
   color: #ffffff;
   letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.project-mark {
+  width: 34px; height: 34px; flex-shrink: 0;
+  display: grid; place-items: center;
+  border-radius: 10px;
+}
+.project-mark svg { width: 20px; height: 20px; }
+.project-mark.fin {
+  background: linear-gradient(135deg, rgba(56,189,248,.18), rgba(99,102,241,.18));
+  border: 1px solid rgba(56,189,248,.35);
+  color: #38bdf8;
+}
+.project-mark.geo {
+  background: linear-gradient(135deg, rgba(52,211,153,.15), rgba(14,165,233,.15));
+  border: 1px solid rgba(52,211,153,.35);
+  color: #34d399;
 }
 .project-subtitle {
   font-size: 0.88rem;

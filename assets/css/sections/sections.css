@@ -60,6 +60,9 @@
   line-height: 1.85;
   margin-bottom: 40px;
   font-weight: 400;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
 }
 .hero-desc strong {
   color: #ffffff;
@@ -200,6 +203,9 @@
   font-size: 1.05rem;
   line-height: 1.9;
   margin-bottom: 22px;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
 }
 .about-text strong {
   color: #ffffff;
@@ -366,6 +372,9 @@
   font-size: 0.96rem;
   line-height: 1.75;
   margin-bottom: 18px;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
 }
 .timeline-tags {
   display: flex;

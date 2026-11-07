@@ -235,6 +235,16 @@ class ModalController {
       });
     });
 
+    // Clic en cualquier parte de la tarjeta de proyecto abre el modal de "Ver más";
+    // los botones y enlaces (Ver en vivo / Ver más) manejan su propia acción
+    document.querySelectorAll('.project-card').forEach((card) => {
+      card.addEventListener('click', (e) => {
+        if (e.target.closest('a, button')) return;
+        const trigger = card.querySelector('.modal-trigger');
+        if (trigger) trigger.click();
+      });
+    });
+
     document.getElementById('closeModalBtn')?.addEventListener('click', () => this.close());
     this.overlay?.addEventListener('click', (e) => {
       if (e.target === this.overlay) this.close();
